@@ -10,7 +10,7 @@ Para agregar/quitar secciones, contacta al programador.
 */
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🔄 Iniciando carga de secciones...');
+    console.log('📄 Iniciando carga de secciones...');
     
     const sections = [
         { id: 'header-container', file: 'sections/header.html' },
@@ -28,8 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let loadedCount = 0;
     const totalSections = sections.length;
 
-    sections.forEach(section => {
-        fetch(section.file)
+    // Cargar todas las secciones usando Promise.all para esperar a que terminen
+    const loadPromises = sections.map(section => {
+        return fetch(section.file)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -42,15 +43,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     container.innerHTML = data;
                     loadedCount++;
                     console.log(`✅ ${section.file} cargado (${loadedCount}/${totalSections})`);
-                    if (loadedCount === totalSections) {
-                        console.log('🎉 Todas las secciones han sido cargadas exitosamente.');
-                    }
                 } else {
                     console.error(`❌ Contenedor con ID '${section.id}' no encontrado.`);
-                }               
+                }
             })
             .catch(error => {
                 console.error(`❌ Error al cargar ${section.file}:`, error);
             });
+    });
+
+    // Esperar a que TODAS las secciones se carguen antes de inicializar
+    Promise.all(loadPromises).then(() => {
+        console.log('🎉 Todas las secciones han sido cargadas exitosamente.');
+        
+        // Disparar evento personalizado para notificar que las secciones están listas
+        const sectionsLoadedEvent = new CustomEvent('sectionsLoaded');
+        document.dispatchEvent(sectionsLoadedEvent);
+        
+        console.log('📡 Evento sectionsLoaded disparado');
     });
 });
