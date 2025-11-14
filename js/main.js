@@ -13,14 +13,28 @@ Este archivo controla:
 */
 
 // ============================================
-// ESPERAR A QUE TODO EL DOM ESTÉ CARGADO
+// ESPERAR A QUE LAS SECCIONES SE CARGUEN
 // ============================================
 
+// Escuchar el evento de que las secciones se cargaron
+document.addEventListener('sectionsLoaded', function() {
+    console.log('📦 Secciones cargadas, inicializando scripts...');
+    
+    // Dar un pequeño delay para que el DOM se renderice completamente
+    setTimeout(initializeScripts, 100);
+});
+
+// Fallback: Si las secciones ya están cargadas cuando se ejecuta este script
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🎉 Fhaddev Chile website cargado correctamente');
     
-    // Dar tiempo para que las secciones se carguen
-    setTimeout(initializeScripts, 500);
+    // Si las secciones ya están cargadas (por si acaso)
+    setTimeout(() => {
+        if (document.querySelector('#fade-carousel')) {
+            console.log('⚡ Secciones ya presentes, inicializando...');
+            initializeScripts();
+        }
+    }, 600);
 });
 
 // ============================================
@@ -32,6 +46,7 @@ function initializeScripts() {
     initStickyHeader();
     initMobileMenu();
     initScrollAnimations();
+    initSmoothScroll();
     
     console.log('✅ Todos los scripts inicializados');
 }
@@ -189,31 +204,39 @@ function initScrollAnimations() {
 }
 
 // ============================================
-// UTILIDADES ADICIONALES
+// 5. SMOOTH SCROLL
 // ============================================
 
-// Smooth scroll para navegación interna
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        
-        // Ignorar enlaces vacíos o solo con #
-        if (href === '#' || href === '') return;
-        
-        e.preventDefault();
-        
-        const target = document.querySelector(href);
-        if (target) {
-            const headerHeight = document.getElementById('main-header')?.offsetHeight || 80;
-            const targetPosition = target.offsetTop - headerHeight;
+function initSmoothScroll() {
+    // Smooth scroll para navegación interna
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
             
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
+            // Ignorar enlaces vacíos o solo con #
+            if (href === '#' || href === '') return;
+            
+            e.preventDefault();
+            
+            const target = document.querySelector(href);
+            if (target) {
+                const headerHeight = document.getElementById('main-header')?.offsetHeight || 80;
+                const targetPosition = target.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-});
+    
+    console.log('✅ Smooth scroll inicializado');
+}
+
+// ============================================
+// UTILIDADES ADICIONALES
+// ============================================
 
 // Log de errores para debugging
 window.addEventListener('error', function(e) {
