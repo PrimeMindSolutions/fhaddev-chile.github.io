@@ -1,0 +1,131 @@
+<!-- ============================================ -->
+<!-- SECCIÓN: QUÉ HACEMOS (Carrusel) -->
+<!-- ✅ EDITABLE POR EL CLIENTE -->
+<!-- ============================================ -->
+
+<!--
+📝 GUÍA DE EDICIÓN:
+
+✅ PUEDES EDITAR:
+1. Título de cada slide (h3)
+2. Descripción de cada slide (p)
+3. URL de cada imagen de fondo
+
+❌ NO EDITAR:
+- Estructura del carrusel
+- Clases CSS
+- Botones de navegación
+- JavaScript (está en main.js)
+
+💡 CÓMO AÑADIR/QUITAR SLIDES:
+   Contacta al programador - requiere ajustes en JavaScript
+-->
+
+<section id="que-hacemos" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 text-center">
+        <!-- ✏️ TÍTULO PRINCIPAL -->
+        <h2 class="font-title text-3xl md:text-5xl text-haiti-blue mb-4 animate-on-scroll">¿QUÉ HACEMOS?</h2>
+        
+        <!-- ✏️ DESCRIPCIÓN PRINCIPAL -->
+        <p class="text-gray-600 max-w-3xl mx-auto mb-12 animate-on-scroll">
+            Fhaddev desarrolla diversas acciones humanitarias y sociales en áreas clave para potenciar el desarrollo de haitianos en distintos países:
+        </p>
+
+        <!-- CARRUSEL (NO MODIFICAR ESTRUCTURA) -->
+        <div id="fade-carousel" class="relative w-full overflow-hidden mx-auto h-[400px] md:h-[600px] lg:h-[700px] shadow-2xl rounded-xl animate-on-scroll">
+
+            <!-- SLIDE 1: DERECHOS HUMANOS -->
+            <div class="carousel-item absolute inset-0 transition-opacity duration-1000 opacity-100 active">
+                <!-- ✏️ IMAGEN DE FONDO -->
+                <img src="https://www.unicef.org/lac/sites/unicef.org.lac/files/styles/hero_extended/public/02-Unicef-ClubDesMeres-HD-6.jpg.webp?itok=ysPrDaJZ" alt="Derechos Humanos" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center p-8">
+                    <!-- ✏️ TÍTULO DEL SLIDE -->
+                    <h3 class="text-white text-4xl md:text-5xl font-title mb-4">Derechos Humanos</h3>
+                    <!-- ✏️ DESCRIPCIÓN DEL SLIDE -->
+                    <p class="text-white text-lg md:text-xl max-w-3xl font-light text-center">
+                        Promovemos y defendemos los derechos fundamentales de la comunidad haitiana, trabajando por la dignidad, igualdad y justicia social.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SLIDE 2: EDUCACIÓN -->
+            <div class="carousel-item absolute inset-0 transition-opacity duration-1000 opacity-0">
+                <!-- ✏️ IMAGEN DE FONDO -->
+                <img src="https://www.jornada.com.mx/ndjsimg/images/jornada/jornadaimg/cdmx-escuela-de-espanol-para-haitianos-3270/cdmx-escuela-de-espanol-para-haitianos-3270html-migrantes-haitianos-cdmxjpg-1296html-0daba2d0-3943-4dd9-aa18-98fce6b9945b.jpgljnredespreviewcrop" alt="Educación" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center p-8">
+                    <!-- ✏️ TÍTULO DEL SLIDE -->
+                    <h3 class="text-white text-4xl md:text-5xl font-title mb-4">Educación</h3>
+                    <!-- ✏️ DESCRIPCIÓN DEL SLIDE -->
+                    <p class="text-white text-lg md:text-xl max-w-3xl font-light text-center">
+                        Cursos de inducción y reforzamiento en español, talleres educativos y programas de capacitación que fortalecen el desarrollo personal y profesional.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SLIDE 3: SALUD -->
+            <div class="carousel-item absolute inset-0 transition-opacity duration-1000 opacity-0">
+                <!-- ✏️ IMAGEN DE FONDO -->
+                <img src="https://news.umiamihealth.org/wp-content/uploads/2024/07/GettyImages-Afro-Caribbean-mom-and-son-1800px-530307587.jpg" alt="Salud" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center p-8">
+                    <!-- ✏️ TÍTULO DEL SLIDE -->
+                    <h3 class="text-white text-4xl md:text-5xl font-title mb-4">Salud</h3>
+                    <!-- ✏️ DESCRIPCIÓN DEL SLIDE -->
+                    <p class="text-white text-lg md:text-xl max-w-3xl font-light text-center">
+                        Acompañamiento psicosocial, talleres de salud mental y bienestar, promoviendo el acceso a servicios de salud integral para la comunidad.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SLIDE 4: DESARROLLO -->
+            <div class="carousel-item absolute inset-0 transition-opacity duration-1000 opacity-0">
+                <!-- ✏️ IMAGEN DE FONDO -->
+                <img src="https://articles.unesco.org/sites/default/files/2022-09/teacher%20prize%20laureate%202022-haiti-c-PH4%20Global.jpg" alt="Desarrollo" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center p-8">
+                    <!-- ✏️ TÍTULO DEL SLIDE -->
+                    <h3 class="text-white text-4xl md:text-5xl font-title mb-4">Desarrollo</h3>
+                    <!-- ✏️ DESCRIPCIÓN DEL SLIDE -->
+                    <p class="text-white text-lg md:text-xl max-w-3xl font-light text-center">
+                        Programas de desarrollo económico y social que fomentan la autonomía, el emprendimiento y el crecimiento sostenible de la comunidad.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SLIDE 5: SOCIOCULTURAL -->
+            <div class="carousel-item absolute inset-0 transition-opacity duration-1000 opacity-0">
+                <!-- ✏️ IMAGEN DE FONDO -->
+                <img src="https://i0.wp.com/haitiantimes.com/wp-content/uploads/2021/11/IMG_6856.jpg?fit=780%2C520&ssl=1" alt="Sociocultural" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center p-8">
+                    <!-- ✏️ TÍTULO DEL SLIDE -->
+                    <h3 class="text-white text-4xl md:text-5xl font-title mb-4">Sociocultural</h3>
+                    <!-- ✏️ DESCRIPCIÓN DEL SLIDE -->
+                    <p class="text-white text-lg md:text-xl max-w-3xl font-light text-center">
+                        Fortalecimiento de la identidad cultural haitiana, eventos comunitarios, talleres artísticos y espacios de integración social.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SLIDE 6: MEDIO AMBIENTE -->
+            <div class="carousel-item absolute inset-0 transition-opacity duration-1000 opacity-0">
+                <!-- ✏️ IMAGEN DE FONDO -->
+                <img src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/11-12-2021-IOM-Haiti-plastic1.jpg/image1024x768.jpg" alt="Medio Ambiente" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center p-8">
+                    <!-- ✏️ TÍTULO DEL SLIDE -->
+                    <h3 class="text-white text-4xl md:text-5xl font-title mb-4">Medio Ambiente</h3>
+                    <!-- ✏️ DESCRIPCIÓN DEL SLIDE -->
+                    <p class="text-white text-lg md:text-xl max-w-3xl font-light text-center">
+                        Iniciativas de educación ambiental y promoción de prácticas sostenibles para el cuidado del planeta y las comunidades.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Botones de Navegación (NO EDITAR) -->
+            <button class="absolute top-1/2 left-0 transform -translate-y-1/2 p-4 text-white hover:text-haiti-red transition duration-300 z-10" id="prev-btn" aria-label="Anterior">
+                <svg class="w-8 h-8 md:w-12 md:h-12 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button class="absolute top-1/2 right-0 transform -translate-y-1/2 p-4 text-white hover:text-haiti-red transition duration-300 z-10" id="next-btn" aria-label="Siguiente">
+                <svg class="w-8 h-8 md:w-12 md:h-12 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            
+        </div>
+    </div>
+</section>

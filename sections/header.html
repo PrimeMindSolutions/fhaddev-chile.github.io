@@ -1,0 +1,98 @@
+<!-- ============================================ -->
+<!-- HEADER / NAVBAR -->
+<!-- ✅ EDITABLE POR EL CLIENTE -->
+<!-- ============================================ -->
+
+<!-- 
+📝 GUÍA DE EDICIÓN:
+
+✅ PUEDES EDITAR:
+1. URLs DE LOS LOGOS (líneas marcadas con "EDITAR AQUÍ")
+2. Nombre de la organización "Fhaddev Chile"
+3. Texto de los enlaces del menú
+4. Texto del botón de donación
+5. Enlaces de navegación (#inicio, #nosotros, etc.)
+
+❌ NO EDITAR:
+- Clases CSS (class="...")
+- IDs (id="...")
+- Estructura de divs y tags HTML
+- Atributos de JavaScript
+
+💡 CÓMO CAMBIAR IMÁGENES:
+   Busca: src="URL_DE_LA_IMAGEN"
+   Reemplaza solo la URL entre comillas
+   Ejemplo: src="https://tu-nueva-imagen.jpg"
+-->
+
+<header id="main-header" class="bg-transparent text-white fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        
+        <a href="#inicio" class="flex items-center space-x-3">
+            <!-- 📝 LOGO TRANSPARENTE (se muestra cuando la página está arriba) -->
+            <!-- ✏️ EDITAR AQUÍ: Cambia solo la URL dentro de src="" -->
+            <img src="images/fhaddev.jpeg" 
+                 alt="Logo Fhaddev Chile" 
+                 class="h-10 w-10 rounded-full logo-transparent"
+                 onerror="this.src='fhaddev.jpeg'">
+
+            <!-- 📝 LOGO DE COLOR (se muestra cuando haces scroll) -->
+            <!-- ✏️ EDITAR AQUÍ: Cambia solo la URL dentro de src="" -->
+            <img src="images/fhaddev.jpeg" 
+                 alt="Logo Fhaddev Chile" 
+                 class="h-10 w-10 rounded-full logo-color"
+                 onerror="this.src='fhaddev.jpeg'"
+                 style="background-color: var(--haiti-blue);">
+            
+            <!-- 📝 NOMBRE DE LA ORGANIZACIÓN -->
+            <!-- ✏️ EDITAR AQUÍ: Cambia "Fhaddev Chile" por tu texto -->
+            <span class="text-2xl font-black transition-colors duration-300 font-title tracking-tight nav-link">
+                Fhaddev Chile
+            </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-7 font-semibold">
+            <!-- 📝 ENLACES DEL MENÚ -->
+            <!-- ✏️ EDITAR: Puedes cambiar el texto entre > y < -->
+            <!-- ⚠️ NO CAMBIAR los href="#..." ni las clases -->
+            <a href="#inicio" class="hover:text-haiti-red transition duration-300 nav-link">Inicio</a>
+            <a href="#nosotros" class="hover:text-haiti-red transition duration-300 nav-link">Nosotros</a>
+            <a href="#que-hacemos" class="hover:text-haiti-red transition duration-300 nav-link">Qué hacemos</a>
+            <a href="#programas" class="hover:text-haiti-red transition duration-300 nav-link">Programas</a>
+            <a href="#equipo" class="hover:text-haiti-red transition duration-300 nav-link">Equipo</a>
+            <a href="#donaciones" class="hover:text-haiti-red transition duration-300 nav-link">Donaciones</a>
+            <a href="#contacto" class="hover:text-haiti-red transition duration-300 nav-link">Contacto</a>
+            
+            <!-- 📝 BOTÓN DE DONACIÓN -->
+            <!-- ✏️ EDITAR: Solo el texto "Haz tu donación" -->
+            <a href="#donaciones" class="btn-donacion flex items-center space-x-2 bg-gradient-to-r from-haiti-red to-red-600 text-white px-5 py-2.5 rounded-full font-bold hover:from-red-700 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 nav-link !text-white !bg-haiti-red">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M19 14c1.49-1.46 3-3.23 3-6.5C22 3.5 19 2 16 2c-1.8 0-3.5 0.81-4 2.5C11.5 2.81 9.8 2 8 2 5 2 2 3.5 2 7.5c0 3.27 1.51 5.04 3 6.5l7 7 7-7Z"/></svg>
+                <span>Haz tu donación</span>
+            </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+            <button id="menu-btn" class="focus:outline-none nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-xl">
+        <!-- 📝 MENÚ MÓVIL -->
+        <!-- ✏️ EDITAR: Solo los textos entre > y < -->
+        <a href="#inicio" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Inicio</a>
+        <a href="#nosotros" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Nosotros</a>
+        <a href="#que-hacemos" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Qué hacemos</a>
+        <a href="#programas" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Programas</a>
+        <a href="#equipo" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Equipo</a>
+        <a href="#donaciones" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Donaciones</a>
+        <a href="#contacto" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Contacto</a>
+        <a href="#donaciones" class="block text-center w-full bg-haiti-red text-white px-6 py-3 font-semibold hover:bg-red-700 transition duration-300">
+            Haz tu donación
+        </a>
+    </div>
+</header>

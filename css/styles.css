@@ -1,0 +1,215 @@
+
+/* ============================================ */
+/* ESTILOS PRINCIPALES - FHADDEV CHILE */
+/* ============================================ */
+/* 
+⚠️ IMPORTANTE: Este archivo es gestionado por el programador
+NO REALIZAR MODIFICACIONES sin consultar primero
+
+Para cambios de colores, fuentes o diseño personalizado,
+contacta al programador.
+*/
+
+/* ============================================ */
+/* FUENTES */
+/* ============================================ */
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, .font-title {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 800;
+}
+
+/* ============================================ */
+/* COLORES PRINCIPALES */
+/* ============================================ */
+
+:root {
+    --haiti-blue: #00209F;
+    --haiti-red: #D21034;
+}
+
+.bg-haiti-blue { 
+    background-color: var(--haiti-blue); 
+}
+
+.text-haiti-blue { 
+    color: var(--haiti-blue); 
+}
+
+.bg-haiti-red { 
+    background-color: var(--haiti-red); 
+}
+
+.text-haiti-red { 
+    color: var(--haiti-red); 
+}
+
+.border-haiti-blue { 
+    border-color: var(--haiti-blue); 
+}
+
+.border-haiti-red { 
+    border-color: var(--haiti-red); 
+}
+
+/* ============================================ */
+/* HEADER - COMPORTAMIENTO AL HACER SCROLL */
+/* ============================================ */
+
+.header-scrolled {
+    background-color: white !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.header-scrolled .nav-link:not(.btn-donacion) {
+    color: #374151 !important;
+}
+
+.header-scrolled .btn-donacion {
+    background-image: linear-gradient(to right, #D21034 0%, #D21034 100%) !important;
+    color: white !important;
+}
+
+.header-scrolled .logo-transparent {
+    display: none;
+}
+
+.logo-color {
+    display: none;
+}
+
+.header-scrolled .logo-color {
+    display: inline-block;
+}
+
+.btn-donacion {
+    background-color: var(--haiti-red) !important;
+}
+
+/* ============================================ */
+/* ANIMACIONES */
+/* ============================================ */
+
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+}
+
+.is-visible {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* ============================================ */
+/* CARRUSEL */
+/* ============================================ */
+
+.carousel-item {
+    opacity: 0; 
+    z-index: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    z-index: 2; 
+}
+
+/* ============================================ */
+/* BOTÓN FLOTANTE DE WHATSAPP */
+/* ============================================ */
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+/* ============================================ */
+/* RESPONSIVE - AJUSTES MÓVILES */
+/* ============================================ */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .whatsapp-float img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* ============================================ */
+/* UTILIDADES ADICIONALES */
+/* ============================================ */
+
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+/* Mejora la legibilidad de textos sobre imágenes */
+.text-shadow-strong {
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.text-shadow-medium {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Efecto hover para tarjetas */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
